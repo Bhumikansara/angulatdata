@@ -32,9 +32,9 @@ export class PlanComponent implements OnInit {
 		  this.plans = data;
 		})
 		
-		this.planForm = new FormGroup({
+		/* this.planForm = new FormGroup({
 		  'subscribe-user': ['',Validators.required]
-		})
+		}) */
 
         
     }
@@ -51,7 +51,7 @@ export class PlanComponent implements OnInit {
 	
 	showContent(data:any){
 		console.log(data);
-	this.showcontent=this.readioSelected;
+	this.showcontent=this.radioSelected;
 	}
 
 }
