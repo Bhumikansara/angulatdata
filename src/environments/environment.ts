@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'https://epestic.com/client/data/angular_project'
+    apiUrl: 'https://epestic.com/client/data/login_auth'
 };
 
 /*
