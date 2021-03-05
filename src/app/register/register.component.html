@@ -1,0 +1,122 @@
+	<div class="main-content">
+		<div class="left-col">
+			<div class="logo"><a href="#"><img src="http://localhost/angular-8-jwt-authentication-example-master/logo.png" alt="" /></a></div>
+			<div class="left-col-content">
+				<h1>Create your Free Project Plan</h1>
+				<p>Easily plan, communicate, and stay within your project budget.</p>
+			</div>
+			<div class="left-col-bottom">Copyright © Router App, 2020</div>
+		</div>
+		<div class="right-col">
+			<div class="right-col-content-main">
+				<div class="right-col-content-inner">
+					<h2>Sign Up </h2>
+					<p>Create your account to get access </p>
+					<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+						 <div class="form-group">
+							<label for="firstname">Firstname</label>
+							<input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+							<div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+								<div *ngIf="f.firstname.errors.required">Firstname is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lastname">Lastname</label>
+							<input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+							<div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+								<div *ngIf="f.lastname.errors.required">Lastname is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+							<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+								<div *ngIf="f.email.errors.required">Email is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+							<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+								<div *ngIf="f.password.errors.required">Password is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="company">Company</label>
+							<input type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" />
+							 <!--select class="form-control" formControlName="company" [ngClass]="{ 'is-invalid': submitted && f.company.errors }"> 
+							  <option value="">Please select Company</option>
+							  <option value="individual">Individual</option>
+							  <option value="comapny">Company</option>
+							</select-->
+							
+							<div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+								<div *ngIf="f.company.errors.required">Company is required</div>
+							</div>
+						</div>
+						<button class="btn btn-primary">
+							register
+						</button>&nbsp;  
+						
+						<div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+					</form>
+					<!--div class="form-footer">
+						<button class="btn btn-full">Get Started</button>
+					</div>
+					<div class="right-bottom-text">
+						<h3>Do you have an account?</h3>
+						<a href="#">Sign In</a>
+					</div-->
+				</div>
+			</div>
+		</div>
+	</div>
+<!--div class="col-md-6 offset-md-3 mt-5">
+    <div class="card">
+        <h4 class="card-header">Register</h4>
+        <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+				 <div class="form-group">
+                    <label for="firstname">Firstname</label>
+                    <input type="text" formControlName="firstname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+                    <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstname.errors.required">Firstname is required</div>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="lastname">Lastname</label>
+                    <input type="text" formControlName="lastname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+                    <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastname.errors.required">Lastname is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" />
+                    <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                        <div *ngIf="f.company.errors.required">Company is required</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary">
+                    register
+                </button>&nbsp;  
+				
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div-->

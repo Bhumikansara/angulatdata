@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+	
+    <div class="navbar-nav">
+		<div class="logo"><a href="#"><img src="http://localhost/angular-8-jwt-authentication-example-master/logo.png" alt="" /></a></div>
+
+    </div>
+</nav>
+<div class="col-md-6 offset-md-3 mt-5">
+<div class="card mt-4">
+	
+    <h4 class="card-header">Plan List</h4>
+    <div class="card-body">
+        <h6></h6>
+        <!--ul *ngIf="users">
+            <li>{{users.email}}</li>
+            <li>{{users.name}}</li>
+        </ul-->
+		<form name="planForm" (ngSubmit)="onSubmit()">
+		<table class="table" *ngIf="plans">
+          <thead>
+            <th></th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Discount</th>
+            <th>Type</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let plan of plans; let i = index" [attr.data-index]="i">
+              <td><input type="radio" name="subscribe-user" id="subscribe-user{{i+1}}" (model)="radioSelected" (click)="showContent(i+1)" >
+			  <span class="error-msg" *ngIf="isFormSubmitted && planForm.controls['subscribe-user'].errors?.required">
+				Please select any option above!
+			  </span></td>
+              <td><div class="plan_name">{{plan.name}}</div></td>
+              <td><div class="plan_desc">{{plan.description}}</div></td>
+              <td><div class="plan_price">{{plan.price}}</div></td>
+              <td><div class="plan_discount">{{plan.discount}}</div></td>
+              <td><div class="plan_type">{{plan.type}}</div></td>
+			 
+            </tr>
+			
+			<tr style="text-align:center;">
+				<td colspan="6"><input type="button" class="btn btn-primary" name="plan-submit" value="Submit" /></td>
+			</tr>
+          </tbody>
+        </table>
+		</form>
+    </div>
+</div>
+</div>

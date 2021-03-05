@@ -1,0 +1,31 @@
+﻿<div class="col-md-6 offset-md-3 mt-5">
+<div class="card mt-4">
+	
+    <h4 class="card-header">You're logged in!!</h4>
+    <div class="card-body">
+        <h6>Users List</h6>
+        <!--ul *ngIf="users">
+            <li>{{users.email}}</li>
+            <li>{{users.name}}</li>
+        </ul-->
+		
+		<table class="table table-hover" *ngIf="users">
+          <thead>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{user.id}}</td>
+              <td>{{user.firstname}}</td>
+              <td>{{user.lastname}}</td>
+              <td>{{user.email}}</td>
+			 
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+</div>

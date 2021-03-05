@@ -1,0 +1,87 @@
+﻿<div class="main-content">
+		<div class="left-col">
+			<div class="logo"><a href="#"><img src="http://localhost/angular-8-jwt-authentication-example-master/logo.png" alt="" /></a></div>
+			<div class="left-col-content">
+				<h1>Lorem ipsum</h1>
+				<p>Donec pulvinar laoreet enim at auctor. Phasellus vel nisl commodo erat commodo porta ut sed dolor.</p>
+			</div>
+			<div class="left-col-bottom">Copyright © Router App, 2020</div>
+		</div>
+		<div class="right-col">
+			<div class="right-col-content-main">
+				<div class="right-col-content-inner">
+					<h2>Sign In</h2>
+					<p>Enter your credential to get access</p>
+					<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+							<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+								<div *ngIf="f.email.errors.required">Email is required</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+							<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+								<div *ngIf="f.password.errors.required">Password is required</div>
+							</div>
+						</div>
+						<button [disabled]="loading" class="btn btn-primary">
+							<span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+							Login
+						</button>&nbsp;  
+						<a class="btn btn-primary" routerLink="/register">
+						<span *ngIf="signup" class="spinner-border spinner-border-sm mr-1"></span>
+							reigster
+						</a>
+
+						<div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+					</form>
+					<!--div class="form-footer">
+						<a href="#">Forgot Password?</a>
+						<button class="btn">Sign In</button>
+					</div>
+					<div class="right-bottom-text">
+						<h3>Don't have an account?</h3>
+						<a href="#">Create an account</a>
+					</div-->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--div class="col-md-6 offset-md-3 mt-5">
+   
+    <div class="card">
+        <h4 class="card-header">Login</h4>
+        <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>&nbsp;  
+				<a class="btn btn-primary" routerLink="/register">
+				<span *ngIf="signup" class="spinner-border spinner-border-sm mr-1"></span>
+                    reigster
+                </a>
+
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div-->
