@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'https://localhost/angular-8-jwt-authentication-example-master'
+    apiUrl: 'https://epestic.com/client/data/angular_project'
 };
 
 /*
