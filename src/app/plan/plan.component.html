@@ -15,10 +15,10 @@
             <li>{{users.email}}</li>
             <li>{{users.name}}</li>
         </ul-->
-		<form name="planForm" (ngSubmit)="onSubmit()">
+		<form name="planForm" (ngSubmit)="showContent()">
 		<table class="table" *ngIf="plans">
           <thead>
-            <th></th>
+            <th></th> 
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -27,7 +27,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let plan of plans; let i = index" [attr.data-index]="i">
-              <td><input type="radio" name="subscribe-user" id="subscribe-user{{i+1}}" (model)="radioSelected" (click)="showContent(i+1)" >
+              <td><input type="radio" name="subscribe-user" id="subscribe-user{{plan.id}}" (click)="pay(i+1)" >
 			  <span class="error-msg" *ngIf="isFormSubmitted && planForm.controls['subscribe-user'].errors?.required">
 				Please select any option above!
 			  </span></td>
@@ -39,9 +39,9 @@
 			 
             </tr>
 			
-			<tr style="text-align:center;">
+			<!--tr style="text-align:center;">
 				<td colspan="6"><input type="button" class="btn btn-primary" name="plan-submit" value="Submit" /></td>
-			</tr>
+			</tr-->
           </tbody>
         </table>
 		</form>
