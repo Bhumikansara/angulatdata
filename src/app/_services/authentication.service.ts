@@ -58,6 +58,11 @@ export class AuthenticationService {
                 return user;
             })); */
     }
+
+    company(data: string, amount:string) {         
+        return this.http.post<any>(`${environment.apiUrl}/company.php`, {data,amount });        
+          
+    }
 	
 	
 	
